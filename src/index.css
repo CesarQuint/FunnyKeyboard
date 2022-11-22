@@ -1,0 +1,584 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Rubik;
+}
+
+body{
+  height:fit-content;
+}
+#tablero{
+  display: none;
+}
+body header{
+  background: rgb(20,20,20);
+  background: radial-gradient(circle, rgba(20,20,20,1) 77%, rgba(47,47,47,1) 100%);
+  width: auto;
+  padding: 1rem 2rem 2rem 2rem;
+  
+}
+
+body header h1{
+  font-size: 2rem;
+  text-align: center;
+  color: transparent;
+  background-clip:text;
+  -webkit-background-clip: text;
+  background-image: url('./assets/texture_h.jpg');
+  background-position: fixed;
+}
+
+body header h2{
+  text-align: center;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: white;
+}
+
+body main{
+  background-image: linear-gradient(90deg, rgba(25,25,25,0.7371323529411764) 0%, rgba(25,25,25,0.5046393557422969) 100%),url('./assets/wood.jpg');
+  background-attachment: fixed;
+  background-position: center;
+}
+
+body footer{
+  background: rgb(20,20,20);
+  background: radial-gradient(circle, rgba(20,20,20,1) 77%, rgba(47,47,47,1) 100%);
+  width: auto;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
+  
+}
+
+body footer a{
+  font-size:4rem;
+  color: white;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+body footer a:hover{
+  color:#b41818;
+  transform: rotate(35deg);
+}
+
+body main h1#First{
+  text-align: center;
+  color: white;
+  padding-top: 1rem;
+}
+
+body main h2#KeyBoard{
+  display: none;
+  color: white;
+}
+
+body main div.key{
+  background-color: white;
+  box-shadow: inset -9px 0px 10px 1px #111;
+  padding: 1rem 2rem 1rem 2rem;
+  border: .5rem solid #111111;
+  text-align: end;
+  border-bottom-right-radius: 2vw;
+  border-top-right-radius: 2vw;
+  position: relative;
+  transition: all;
+  transition: ease;
+  transition-duration: 80ms;
+}
+body main div.key:active{
+  color: red;
+  box-shadow: inset -8px -7px 10px 4px #111;
+}
+
+.active{
+  color: red;
+  box-shadow: inset -8px -7px 10px 4px #111 !important;
+}
+
+body main div.semiKey{
+  background-color: #111;
+  box-shadow: inset -9px 0px 3px 0px #5a5a5a;
+  text-align: end;
+  color: white;
+  padding: 4px 2rem .5rem 2rem;
+  border: .5rem solid #111111;
+  position: absolute;
+  width: 5rem;
+  transition: all;
+  transition: ease;
+  transition-duration: 80ms;
+}
+
+body main div.semiKey:active{
+  color: rgb(0, 119, 255);
+  box-shadow: inset -14px -4px 4px 1px #5a5a5a;
+}
+
+.activeSem{
+  color: rgb(0, 119, 255) !important;
+  box-shadow: inset -14px -4px 4px 1px #5a5a5a !important;
+}
+
+.modal {
+  position: fixed;
+  background-color: rgb(92 92 92 / 92%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 1;
+  filter: blur(8rem); 
+  -webkit-filter: blur(1rem);
+}
+
+div#modal-content{
+ color: white;
+  font-weight: bold;
+  border-top: 3px solid #f1f1f1;
+  border-bottom: 3px solid #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+div#modal-content p{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: xx-large;
+}
+
+div#modal-content p#playButton{
+  font-size: 8rem;
+  transition: all;
+  transition-duration: 1s;
+}
+
+div#modal-content p#playButton:hover{
+  cursor: pointer;
+  color: #b41818;
+}
+
+body main div.semiKey:first-child{
+ top: 4rem;
+}
+body main div.semiKey:nth-child(2){
+  top:8rem;
+ }
+
+ body main div.semiKey:nth-child(3){
+  top: 16.5rem;
+ }
+ body main div.semiKey:nth-child(4){
+  top:20.5rem;
+ }
+
+body main div.semiKey:nth-child(5){
+  top:24.5rem;
+ }
+
+ body main div.semiKey:nth-child(6){
+  top:33rem;
+ }
+ body main div.semiKey:nth-child(7){
+  top:37rem;
+ }
+
+
+body main div.semiKey:nth-child(8){
+  top:45.5rem;
+ }
+
+ body main div.semiKey:nth-child(9){
+  top:50rem;
+ }
+ body main div.semiKey:nth-child(10){
+  top:54rem;
+ }
+
+body main div.semiKey:nth-child(11){
+  top:62.5rem;
+ }
+
+ body main div.semiKey:nth-child(12){
+  top:66.5rem;
+ }
+ body main div.semiKey:nth-child(13){
+  top:75rem;
+ }
+ body main div.semiKey:nth-child(14){
+  top:79rem;
+ }
+ body main div.semiKey:last-child{
+  top:83.5rem;
+ }
+main div.container{
+  padding: 1rem;
+  position: relative;
+  overflow-y: scroll;
+  height: 32rem;
+}
+
+
+@media (min-width:769px){
+  main{
+    height: 40rem;
+  }
+
+  body header h1{
+    text-align: left;
+    font-size:3rem;
+  }
+  body header h2{
+    text-align: left;
+    font-size:2rem;
+  }
+
+  body main h2#KeyBoard{
+    display:initial;
+    padding: 1rem;
+    text-transform: uppercase;
+  }
+  main div.container{
+    display: flex;
+    position: relative;
+    overflow-y: hidden;
+    height:25rem;
+  }
+  body main div.key{
+    box-shadow: inset 2px -13px 6px 1px #111;
+    transition-duration: 80ms;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 20rem;
+  }
+  body main div.key p{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  body main div.semiKey{
+    box-shadow: inset 0px -13px 3px 0px #5a5a5a;
+    padding: 1rem 1rem 0rem 1rem;
+    border: 0.5rem solid #111111;
+    position: absolute;
+    width: 1rem;
+    height:10rem;
+  }
+  body main div.semiKey:first-child{
+    top: 1rem;
+    left: 4rem;
+   }
+   body main div.semiKey:nth-child(2){
+    top:1rem;
+    left: 9rem;
+   }
+  
+   body main div.semiKey:nth-child(3){
+    top:1rem;
+    left: 19rem;
+   }
+   body main div.semiKey:nth-child(4){
+    top:1rem;
+    left:24rem;
+   }
+  
+  body main div.semiKey:nth-child(5){
+    top:1rem;
+    left:29rem;
+   }
+  
+   body main div.semiKey:nth-child(6){
+    top:1rem;
+    left:39rem;
+   }
+   body main div.semiKey:nth-child(7){
+    top:1rem;
+    left:44rem;
+   }
+  
+  
+  body main div.semiKey:nth-child(8){
+    top:1rem;
+    left:54rem;
+   }
+  
+   body main div.semiKey:nth-child(9){
+    top:1rem;
+    left:59rem;
+   }
+   body main div.semiKey:nth-child(10){
+    top:1rem;
+    left:64rem;
+   }
+  
+  body main div.semiKey:nth-child(11){
+    top:1rem;
+    left:74rem;
+   }
+  
+   body main div.semiKey:nth-child(12){
+    top:1rem;
+    left:79rem;
+   }
+   body main div.semiKey:nth-child(13){
+    top:1rem;
+    left:89rem;
+   }
+   body main div.semiKey:nth-child(14){
+    top:1rem;
+    left:94rem;
+   }
+   body main div.semiKey:last-child{
+    top:1rem;
+    left:99rem;
+   }
+
+}
+
+@media(min-width:1025px){
+  main{
+    height:auto;
+  }
+  body main div.key{
+    box-shadow: inset 2px -13px 6px 1px #111;
+    transition-duration: 80ms;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 15.5rem;
+  }
+
+  body main div.semiKey{
+    box-shadow: inset 0px -13px 3px 0px #5a5a5a;
+    padding: 1rem 1rem 0rem 1rem;
+    border: 0.5rem solid #111111;
+    position: absolute;
+    width: 1rem;
+    height:7rem;
+  }
+  main div.container{
+    overflow-x: scroll;
+    height: 19rem;
+  }
+  main div.container::-webkit-scrollbar{
+    background-color: #720d0d;
+    border-radius: 2rem
+  }
+ main div.container::-webkit-scrollbar-thumb {
+  background-color: #b41818;
+  outline: 1px solid #430404;
+  border-radius: 2rem;}
+
+  
+/*Prototipo*/
+div#prototipo{
+  position: relative;
+  height:42rem;
+  width:99%;
+  overflow-x:scroll;
+}
+
+/*Puse el teclado en display none*/
+div#prototipo div#teclado{
+  position: absolute;
+  padding: 0px;
+  width: 91rem;
+  height: 19rem;
+  left:6rem;
+  top:14.5rem;
+}
+
+#carcasa{
+  background-color: rgb(192, 24, 24);
+  position: absolute;
+  width: 100rem;
+  left: 2rem;
+  top: 4rem;
+  height: 32rem;
+  border-radius:2rem;
+  background: linear-gradient(0deg, rgba(192,24,24,1) 0%, rgba(192,24,24,1) 69%, rgba(231,82,82,1) 88%, rgba(192,24,24,1) 95%, rgba(192,24,24,1) 100%);
+  box-shadow: inset 0px -4px 5px 10px rgb(67 4 4);
+  box-shadow: 1px 1px black;
+}
+#carcasa::before{
+  content:'';
+  width: 16rem;
+  height: 1.5rem;
+  background-image: linear-gradient(90deg, rgba(25,25,25,0.7371323529411764) 0%, rgba(25,25,25,0.5046393557422969) 100%),url('./assets/wood.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  position: absolute;
+  top: 0.5rem;
+  left: 39rem;
+  border-radius:1rem;
+  box-shadow:inset 0px 0px 3px 1px rgb(67 4 4);
+  border: 3px solid rgb(120, 24, 24);
+}
+
+#carcasa::after{
+  content:'';
+  width: 12rem;
+  height: 0.5rem;
+  border: 2px solid rgb(22, 22, 22);
+  border-radius: 1rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+  box-shadow:inset 0px 0px 3px 0px rgb(67 4 4);
+}
+
+#bocinas{
+  background-color: rgb(180, 24, 24);
+  position: absolute;
+  width: 98.5rem;
+  height:28rem;
+  border-radius:2rem;
+  top:7rem;
+  left:2.5rem;
+}
+
+#bocinas::before{
+  content: '';
+  height: 27rem;
+  width: 97rem;
+  left: 0.5rem;
+  top: 0.5rem;
+  position: absolute;
+  background-image: radial-gradient(#212121 20%, transparent 20%),radial-gradient(#212121 20%,transparent 20%), radial-gradient(#b1b1b1 20%, transparent 20%);
+  background-color: #b41818;
+  background-position: 0 0, 135px 75px;
+  background-size: 10px 10px;
+  border-radius: 1rem;
+}
+#bocinas::after{
+  content: '';
+  height: 19rem;
+  width: 92rem;
+  left:3rem;
+  top:8rem;
+  position: absolute;
+  box-shadow: inset -1px 5px 6px 8px rgb(67 4 4);
+  background-color: #0e0101;
+}
+
+#tablero{
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 38rem;
+  height: 6rem;
+  top:8rem;
+  left:30rem;
+  background-color:#212121;
+  border-radius:8px;
+  box-shadow: inset 0px 0px 2px 3px rgb(62 62 62);
+  background: linear-gradient(90deg, rgba(45,45,45,1) 11%, rgb(31, 31, 31) 80%, rgb(39, 39, 39) 100%);
+}
+
+#casio{
+  color: white;
+  padding: 1rem;
+  text-shadow: -2px 2px 0px black;
+}
+section#tablero button{
+padding: 1rem;
+margin-right: 1rem;
+color: #5a5a5a;
+background-color: #111111;
+border :4px solid rgb(116, 9, 9);
+box-shadow: inset 0px 0px 5px 7px rgb(40 40 40);
+border-radius: 1rem;
+}
+
+section#tablero div#volume{
+  border-left: 2px solid rgb(51, 51, 51);
+  padding-left: 1rem;
+}
+
+section#tablero div#volume button{
+  display: flex;
+  flex-flow: column;
+  border :2px solid rgb(17, 17, 17);
+  height: 1rem;
+  width: 1rem;
+  margin-bottom: 4px;
+  place-content: center;
+  min-width: fit-content;
+}
+
+section#tablero section#pantalla{
+  height: 4rem;
+  width: 10rem;
+  background-color:#111111;
+  border-radius:6px;
+  position: relative;
+}
+
+section#tablero section#pantalla::before{
+content: 'Track One';
+font-size: 12px;
+color: #525252;
+width: 5rem;
+height: 2rem;
+background-color: #8d8d8d;
+position: absolute;
+top: 0.5rem;
+left: 0.5rem;
+border-radius: 2px;
+}
+section#tablero section#pantalla::after{
+  content: '';
+  width: 3rem;
+  height: 3rem;
+  background-color: #383838;
+  border: 2px solid rgb(190, 27, 27);
+  position: absolute;
+  top: 0.5rem;
+  left:6rem;
+  border-radius:50%;
+  background: radial-gradient(circle, rgba(55,55,55,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 69%, rgba(55,55,55,1) 100%);
+  }
+section#tablero section#pantalla div#reproduccion{
+  position: absolute;
+  top:3rem;
+  left: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 3px;
+}
+section#tablero section#pantalla div#reproduccion button#rep{
+  background-color: #8d8d8d;
+  border: 1px solid gray;
+  width: 1rem;
+  padding: 3px;
+  margin-right: 3px;
+}
+
+section#tablero section#botones{
+margin-left: 1rem;
+border: 2px solid #575757;
+border-radius: 1rem ;
+padding: 5px;
+}
+
+section#tablero section#botones button.b_2{
+  margin-right:2px;
+  border:2px solid #575757;
+}
+section#tablero section#botones button.b_2:first-child{
+  background-color: yellow;
+  background: radial-gradient(circle, rgba(55,55,55,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 69%, rgba(55,55,55,1) 100%);
+}
+
+/*Prototipo*/
+
+}
